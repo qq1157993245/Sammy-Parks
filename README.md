@@ -21,11 +21,10 @@ This application emphasizes:
 
 ## 🌐 Live Demo
 
-👉 [Visit the website](https://sammyparks.com)
+👉 [https://sammyparks.com](https://sammyparks.com)
 
 ## 🎥 Demos
 
-<!-- Demo Screenshots -->
 - [Driver View](./screenshots/driver.pdf)
 - [Administrator View](./screenshots/administrator.pdf)
 - [Parking Enforcement View](./screenshots/enforcement.pdf)
