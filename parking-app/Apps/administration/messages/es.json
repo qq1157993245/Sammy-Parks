@@ -1,0 +1,41 @@
+{
+  "common": {
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "login": {
+    "header": "Inicio de Sesión de Administrador",
+    "email": "Correo Electrónico", 
+    "password": "Contraseña",
+    "submit": "Iniciar Sesión",
+    "error": "Credenciales inválidas"
+  },
+  "administration": {
+    "driver": "Conductor",
+    "driver-account": "Cuentas de Conductor",
+    "enforcement": "Cuentas de Cumplimiento",
+    "add": "Agregar Nuevo Ejecutor",
+    "ticket": "Entradas",
+    "no-ticket": "No hay entradas disponibles.",
+    "overridden": "Anulado",
+    "override": "Anular",
+    "name": "Nombre",
+    "email": "Correo Electrónico", 
+    "password": "Contraseña",
+    "violation": "Violación",
+    "fine": "Tarifa",
+    "status": "Estado",
+    "paid": "Pagado",
+    "unpaid": "No Pagado",
+    "issuer": "Expedido por",
+    "date": "Fecha",
+    "yes": "Sí",
+    "plate": "Placa",
+    "no": "No",
+    "suspend": "Suspender",
+    "activate": "Activar",
+    "challenge-message": "Mensaje de Desafío",
+    "accept": "Aceptar el Desafío",
+    "deny": "Denegar Desafío"
+  }
+}

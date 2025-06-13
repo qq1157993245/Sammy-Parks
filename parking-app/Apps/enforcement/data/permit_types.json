@@ -1,0 +1,20 @@
+[
+    {
+        "id": "100",
+        "price": 200,
+        "type": "half year",
+        "totalAmount": 100
+    },
+    {
+        "id": "101",
+        "price": 300,
+        "type": "one year",
+        "totalAmount": 100
+    },
+    {
+        "id": "102",
+        "price": 350,
+        "type": "one and a half year",
+        "totalAmount": 100
+    }
+]

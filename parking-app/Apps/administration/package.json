@@ -1,0 +1,13 @@
+{
+  "name": "administration",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack -p 3100",
+    "build": "next build",
+    "start": "next start -p 3100",
+    "lint": "next lint",
+    "test": "vitest run --no-file-parallelism --testTimeout=3000 --coverage",
+    "install": "cd ../ && npm install"
+  }
+}

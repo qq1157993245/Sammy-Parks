@@ -1,0 +1,41 @@
+{
+  "common": {
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "login": {
+    "header": "Admin Login",
+    "email": "Email", 
+    "password": "Password",
+    "submit": "Sign In",
+    "error": "Invalid credentials"
+  },
+  "administration": {
+    "driver": "Driver",
+    "driver-account": "Driver Accounts",
+    "enforcement": "Enforcement Accounts",
+    "add": "Add New Enforcer",
+    "ticket": "Tickets",
+    "no-ticket": "No tickets available.",
+    "overridden": "Overridden",
+    "override": "Override",
+    "name": "Name",
+    "email": "Email", 
+    "password": "Password",
+    "violation": "Violation",
+    "fine": "Fine",
+    "status": "Status",
+    "paid": "Paid",
+    "unpaid": "Unpaid",
+    "issuer": "Issued by",
+    "date": "Date",
+    "yes": "Yes",
+    "plate": "Plate",
+    "no": "No",
+    "suspend": "Suspend",
+    "activate": "Activate",
+    "challenge-message": "Challenge Message",
+    "accept": "Accept Challenge",
+    "deny": "Deny Challenge"
+  }
+}

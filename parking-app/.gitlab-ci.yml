@@ -1,0 +1,465 @@
+# Official framework image.
+# https://hub.docker.com/r/library/node/tags/
+# lts = Long Term Support
+image: node:lts
+
+services:
+  - name: postgres:latest
+    command: ["postgres", "-p", "5432"]
+
+variables:
+  PIPELINE: true
+  POSTGRES_HOST: ${POSTGRES_HOST}
+  POSTGRES_PORT: ${POSTGRES_PORT}
+  POSTGRES_DB: ${POSTGRES_DB}
+  POSTGRES_DB_TICKET: ${POSTGRES_DB_TICKET}
+  POSTGRES_USER: ${POSTGRES_USER}
+  POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+  MASTER_SECRET: ${MASTER_SECRET}
+  GIT_DEPTH: 0
+
+stages:
+  - cleanup
+  - quality
+  - build
+  - test
+  - deploy
+
+
+cleanup:
+  stage: cleanup
+  script:
+    - echo "Cleaning up temporary files and unused data..."
+    - rm -rf node_modules
+    - docker system prune -af || true
+    - docker volume prune -f || true
+  rules:
+    - when: always
+      
+lint-auth:
+  stage: quality 
+  script:
+    - npm run ci-microservices
+    - npm run lint-auth
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/auth/**
+      - Microservices/auth/**/*
+
+lint-driver:
+  stage: quality 
+  script:
+    - npm run ci-apps
+    - npm run lint-driver
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Apps/driver/**
+      - Apps/driver/**/*
+
+lint-enforcement:
+  stage: quality 
+  script:
+    - npm run ci-apps
+    - npm run lint-enforcement
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Apps/enforcement/**
+      - Apps/enforcement/**/*
+
+lint-landing-page:
+  stage: quality 
+  script:
+    - npm run ci-apps
+    - npm run lint-landing-page
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Apps/landing-page/**
+      - Apps/landing-page/**/*
+
+lint-permit:
+  stage: quality 
+  script:
+    - npm run ci-microservices
+    - npm run lint-permit
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/permit/**
+      - Microservices/permit/**/*
+
+lint-administration:
+  stage: quality 
+  script:
+    - npm run ci-apps
+    - npm run lint-administration
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Apps/administration/**
+      - Apps/administration/**/*
+
+lint-vehicle:
+  stage: quality 
+  script:
+    - npm run ci-microservices
+    - npm run lint-vehicle
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/vehicle/**
+      - Microservices/vehicle/**/*
+
+lint-ticket:
+  stage: quality 
+  script:
+    - npm run ci-microservices
+    - npm run lint-ticket
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/ticket/**
+      - Microservices/ticket/**/*
+
+lint-stripe:
+  stage: quality 
+  script:
+    - npm run ci-microservices
+    - npm run lint-stripe
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/stripe/**
+      - Microservices/stripe/**/*
+
+lint-police:
+  stage: quality 
+  script:
+    - npm run ci-services
+    - npm run lint-police
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Services/police/**
+      - Services/police/**/*
+
+lint-registrar:
+  stage: quality 
+  script:
+    - npm run ci-services
+    - npm run lint-registrar
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Services/registrar/**
+      - Services/registrar/**/*
+
+build-auth:
+  stage: build
+  script:
+    - npm run install-microservices
+    - npm run build-auth
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/auth/**
+      - Microservices/auth/**/*
+
+build-driver:
+  stage: build 
+  script:
+    - npm run install-apps
+    - npm run build-driver
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Apps/driver/**
+      - Apps/driver/**/*
+
+build-enforcement:
+  stage: build
+  script:
+    - npm run install-apps
+    - npm run build-enforcement
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Apps/enforcement/**
+      - Apps/enforcement/**/*
+
+build-landing-page:
+  stage: build
+  script:
+    - npm run install-apps
+    - npm run build-landing-page
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Apps/landing-page/**
+      - Apps/landing-page/**/*
+
+build-permit:
+  stage: build 
+  script:
+    - npm run install-microservices
+    - npm run build-permit
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/permit/**
+      - Microservices/permit/**/*
+
+build-administration:
+  stage: build 
+  script:
+    - npm run install-apps
+    - npm run build-administration
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Apps/administration/**
+      - Apps/administration/**/*
+
+build-vehicle:
+  stage: build 
+  script:
+    - npm run install-microservices
+    - npm run build-vehicle
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/vehicle/**
+      - Microservices/vehicle/**/*
+
+build-ticket:
+  stage: build 
+  script:
+    - npm run install-microservices
+    - npm run build-ticket
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/ticket/**
+      - Microservices/ticket/**/*
+
+build-stripe:
+  stage: build 
+  script:
+    - npm run install-microservices
+    - npm run build-stripe
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/stripe/**
+      - Microservices/stripe/**/*
+
+build-police:
+  stage: build 
+  script:
+    - npm run install-services
+    - npm run build-police
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Services/police/**
+      - Services/polcie/**/*
+
+build-registrar:
+  stage: build 
+  script:
+    - npm run install-services
+    - npm run build-registrar
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Services/registrar/**
+      - Services/registrar/**/*
+
+
+test-auth:
+  stage: test
+  script:
+    - apt-get update && apt-get install -y postgresql-client
+    - export PGPASSWORD=$POSTGRES_PASSWORD
+    - until pg_isready -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER; do echo "Waiting for database..."; sleep 2; done
+    - psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER -c "DROP DATABASE IF EXISTS test;"
+    - psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER -c "CREATE DATABASE test;"
+    - npm run install-microservices
+    - npm run test-auth
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/auth/**
+      - Microservices/auth/**/*
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - Microservices/auth/coverage/
+
+test-permit:
+  stage: test
+  script:
+    - apt-get update && apt-get install -y postgresql-client
+    - export PGPASSWORD=$POSTGRES_PASSWORD
+    - until pg_isready -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER; do echo "Waiting for database..."; sleep 2; done
+    - psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER -c "DROP DATABASE IF EXISTS test;"
+    - psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER -c "CREATE DATABASE test;"
+    - npm run install-microservices
+    - npm run test-permit
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/permit/**
+      - Microservices/permit/**/*
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - Microservices/permit/coverage/
+
+test-vehicle:
+  stage: test
+  script:
+    - apt-get update && apt-get install -y postgresql-client
+    - export PGPASSWORD=$POSTGRES_PASSWORD
+    - until pg_isready -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER; do echo "Waiting for database..."; sleep 2; done
+    - psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER -c "DROP DATABASE IF EXISTS test;"
+    - psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER -c "CREATE DATABASE test;"
+    - npm run install-microservices
+    - npm run test-vehicle
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/vehicle/**
+      - Microservices/vehicle/**/*
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - Microservices/vehicle/coverage/
+
+test-ticket:
+  stage: test
+  script:
+    - apt-get update && apt-get install -y postgresql-client
+    - export PGPASSWORD=$POSTGRES_PASSWORD
+    - until pg_isready -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER; do echo "Waiting for database..."; sleep 2; done
+    - psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER -c "DROP DATABASE IF EXISTS test;"
+    - psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER -c "CREATE DATABASE test;"
+    - npm run install-microservices
+    - npm run test-ticket
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/ticket/**
+      - Microservices/ticket/**/*
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - Microservices/ticket/coverage/
+
+test-stripe:
+  stage: test
+  script:
+    - npm run install-microservices
+    - npm run test-stripe
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Microservices/stripe/**
+      - Microservices/stripe/**/*
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - Microservices/stripe/coverage/
+
+test-police:
+  stage: test
+  script:
+    - npm run install-services
+    - npm run test-police
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Services/police/**
+      - Services/police/**/*
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - Services/police/coverage/
+
+test-registrar:
+  stage: test
+  script:
+    - npm run install-services
+    - npm run test-registrar
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Services/registrar/**
+      - Services/registrar/**/*
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - Services/registrar/coverage/
+
+test-driver:
+  stage: test
+  script:
+    - npm run install-apps
+    - npm run test-driver
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Apps/driver/**
+      - Apps/driver/**/*
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - Apps/driver/coverage/
+
+test-administration:
+  stage: test
+  script:
+    - npm run install-apps
+    - npm run test-administration
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Apps/administration/**
+      - Apps/administration/**/*
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - Apps/administration/coverage/
+
+test-enforcement:
+  stage: test
+  script:
+    - npm run install-apps
+    - npm run test-enforcement
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Apps/enforcement/**
+      - Apps/enforcement/**/*
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - Apps/enforcement/coverage/
+
+test-landing-page:
+  stage: test
+  script:
+    - npm run install-apps
+    - npm run test-landing-page
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "schedule"
+    - changes:
+      - Apps/landing-page/**
+      - Apps/landing-page/**/*
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - Apps/landing-page/coverage/

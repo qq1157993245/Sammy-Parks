@@ -1,0 +1,44 @@
+[
+  {
+    "id": "10",
+    "name": "Officer Lee",
+    "email": "lee@campus.ucsc.edu",
+    "password": "pass1234",
+    "status": "active"
+  },
+  {
+    "id": "11",
+    "name": "Officer Patel",
+    "email": "patel@campus.ucsc.edu",
+    "password": "patel2025",
+    "status": "suspended"
+  },
+  {
+    "id": "853431",
+    "email": "new@email.com",
+    "name": "New Enforcer",
+    "password": "secret",
+    "status": "suspended"
+  },
+  {
+    "id": "432082",
+    "email": "new@email.com",
+    "name": "New Enforcer",
+    "password": "secret",
+    "status": "suspended"
+  },
+  {
+    "id": "392815",
+    "email": "dan@scs.com",
+    "name": "daniel",
+    "password": "asdfgh",
+    "status": "suspended"
+  },
+  {
+    "id": "733969",
+    "email": "dan@sdfsd.com",
+    "name": "daniel ",
+    "password": "asdfgghh",
+    "status": "active"
+  }
+]

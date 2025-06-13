@@ -1,0 +1,23 @@
+{
+  "name": "microservice-vehicle",
+  "version": "1.2.0",
+  "description": "Vehicle microservice for parking app",
+  "author": "Group 7",
+  "license": "UNLICENSED",
+  "repository": "none",
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "exec": "ts-node src/server.ts"
+  },
+  "scripts": {
+    "start": "node build/server.js",
+    "build": "tsc",
+    "dev": "nodemon",
+    "test": "vitest run --no-file-parallelism --testTimeout=3000 --coverage",
+    "lint": "eslint test/**/*.[jt]s src/**/*.[jt]s --fix",
+    "install": "cd ../ && npm install"
+  }
+}

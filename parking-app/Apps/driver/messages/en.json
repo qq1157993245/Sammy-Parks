@@ -1,0 +1,98 @@
+{
+  "common": {
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "login": {
+    "header": "Driver Login",
+    "email": "Email", 
+    "password": "Password",
+    "submit": "Sign In",
+    "google": "Continue With Google",
+    "newUserPrompt": "New to SammyParks?",
+    "createAccountPrompt": "Create an account",
+    "error": "Invalid credentials"
+  },
+  "signup": {
+    "header": "Driver Signup",
+    "name": "Name",
+    "email": "Email", 
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Sign Up",
+    "existingUserPrompt": "Already have an account?",
+    "signinPrompt": "Sign In",
+    "misMatch": "Passwords do not match",
+    "invalidPasswordPattern": "Password must be at least 8 characters and include a number and a letter",
+    "invalidEmailPattern": "Invalid email address",
+    "error": "Account already exists."
+  },
+  "vehicle": {
+    "header": "Vehicles",
+    "buy": "Buy Permit",
+    "add": "Add Vehicle",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "license": "License Plate",
+    "state": "State"
+  },
+  "permit": {
+    "header": "Permits",
+    "buy": "Buy Permit",
+    "nopermits": "No active permits!",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "vehicle": "Vehicle",
+    "activefrom": "Active from",
+    "to": "to",
+    "permittype": "Permit Type",
+    "zone": "Zone",
+    "permitzone": "Permit Zone"
+  },
+  "ticket": {
+    "header": "Tickets",
+    "notickets": "No tickets found.",
+    "date": "Date",
+    "status": "Status",
+    "pay": "Pay Now",
+    "paid": "Paid",
+    "unpaid": "Unpaid",
+    "challenge": "Challenge Ticket",
+    "reason": "Reason",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "accepted": "Challenge Accepted",
+    "denied": "Challenge Denied"
+  },
+  "profile": {
+    "header": "Profile"
+  },
+  "nav": {
+    "home": "Home",
+    "permits": "Permits",
+    "vehicles": "Vehicles",
+    "tickets": "Tickets"
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "agreementHeader": "1. Agreement",
+    "agreement": "By using this website you are bound to these terms.",
+    "servicesHeader": "2. Services",
+    "services": "Sammy Parks allows drivers to register vehicles and pay for permits and tickets.",
+    "feesHeader": "3. Fees and Payments",
+    "fees": "All decisions made by parking enforcement and administration regarding fees and payments are final. We do not offer refunds for parking permits.",
+    "accountsHeader": "4. User Accounts",
+    "accounts": "To access many of our services you may be required to make an account.",
+    "conductHeader": "5. Conduct",
+    "conductagreenot": "You agree not to",
+    "conduct": [
+      "Use ParkClear for fraudulent or unlawful purposes.",
+      "Attempt to reverse engineer or interfere with the operation of the Service.",
+      "Impersonate any other person or entity."
+    ],
+    "liabilityHeader": "8. Limitation of Liability",
+    "liability": "To the maximum extent permitted by law, ParkClear Inc. shall not be liable for any indirect, incidental, or consequential damages, including missed payment deadlines, additional fines, or legal actions, even if advised of the possibility.",
+    "agreeButton": "Agree",
+    "closeButton": "Close"
+  }
+}

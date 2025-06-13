@@ -1,0 +1,23 @@
+{
+  "common": {
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "login": {
+    "header": "Inicio de Sesión para el Control de Estacionamiento",
+    "email": "Correo Electrónico", 
+    "password": "Contraseña",
+    "submit": "Iniciar Sesión",
+    "invalid": "Credenciales Inválidas",
+    "error": "Error Interno del Servidor"
+  },
+  "enforcement": {
+    "valid": "Permiso válido en la zona ",
+    "no-permit": "No hay permiso disponible",
+    "check": "CONTROLAR",
+    "license-plate": "Número de Placa",
+    "issue-ticket": "Ticket de Problema",
+    "create": "Crear",
+    "violation-label": "Seleccione una infracción"
+  }
+}

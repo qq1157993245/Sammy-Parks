@@ -1,0 +1,19 @@
+services:
+  app:
+    container_name: app
+    image: cte-linux-amd64
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: database
+    image: postgres:alpine
+    environment:
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./Sql/databases.sql:/docker-entrypoint-initdb.d/1.databases.sql
+      - ./Sql/schema.sql:/docker-entrypoint-initdb.d/2.schema.sql
+      - ./Sql/data.sql:/docker-entrypoint-initdb.d/3.data.sql

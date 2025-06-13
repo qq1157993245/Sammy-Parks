@@ -1,0 +1,23 @@
+{
+  "common": {
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "login": {
+    "header": "Parking Enforcement Login",
+    "email": "Email", 
+    "password": "Password",
+    "submit": "Sign In",
+    "invalid": "Invalid Credentials",
+    "error": "Internal Server Error"
+  },
+  "enforcement": {
+    "valid": "Valid permit in zone ",
+    "no-permit": "No permit available",
+    "check": "CHECK",
+    "license-plate": "License Plate Number",
+    "issue-ticket": "Issue Ticket",
+    "create": "Create",
+    "violation-label": "Select a violation"
+  }
+}

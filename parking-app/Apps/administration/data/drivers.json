@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "name": "Alice Smith",
+    "status": "active"
+  },
+  {
+    "id": "2",
+    "name": "Bob Johnson",
+    "status": "suspended"
+  },
+  {
+    "id": "3",
+    "name": "Carlos Reyes",
+    "status": "active"
+  }
+]

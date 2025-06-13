@@ -1,0 +1,98 @@
+{
+  "common": {
+    "english": "Inglés",
+    "spanish": "Español"
+  },
+  "login": {
+    "header": "Inicio de Sesión del Conductor",
+    "email": "Correo Electrónico", 
+    "password": "Contraseña",
+    "submit": "Iniciar Sesión",
+    "google": "Continuar con Google",
+    "newUserPrompt": "¿Nuevo en SammyParks?",
+    "createAccountPrompt": "Crear una cuenta",
+    "error": "Credenciales inválidas"
+  },
+  "signup": {
+    "header": "Registro de Conductor",
+    "name": "Nombre",
+    "email": "Correo Electrónico", 
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "submit": "Regístrate",
+    "existingUserPrompt": "¿Ya tienes una cuenta?",
+    "signinPrompt": "Iniciar sesión",
+    "misMatch": "Las contraseñas no coinciden",
+    "invalidPasswordPattern": "La contraseña debe tener al menos 8 caracteres e incluir un número y una letra.",
+    "invalidEmailPattern": "Dirección de correo electrónico no válida",
+    "error": "La cuenta ya existe."
+  },
+  "vehicle": {
+    "header": "Vehículos",
+    "buy": "Comprar Permiso",
+    "add": "Agregar Vehículo",
+    "cancel": "Cancelar",
+    "submit": "Entregar",
+    "license": "Matrícula",
+    "state": "Estado"
+  },
+  "permit": {
+    "header": "Permisos",
+    "buy": "Comprar Permiso",
+    "nopermits": "No hay permisos activos!",
+    "cancel": "Cancelar",
+    "submit": "Entregar",
+    "vehicle": "Vehículo",
+    "activefrom": "Activo del",
+    "to": "al",
+    "permittype": "Tipo de Permiso",
+    "zone": "Zona",
+    "permitzone": "Zona de Permiso"
+  },
+  "ticket": {
+    "header": "Multas",
+    "notickets": "No hay multas.",
+    "date": "Fecha",
+    "status": "Status",
+    "pay": "Pagar Ahora",
+    "paid": "Pagado",
+    "unpaid": "No pagado",
+    "challenge": "Impugnar la multa",
+    "reason": "Razón",
+    "cancel": "Cancelar",
+    "submit": "Entregar",
+    "accepted": "Disputa Aceptada",
+    "denied": "Disputa Denegada"
+  },
+  "profile": {
+    "header": "Perfil"
+  },
+  "nav": {
+    "home": "Casa",
+    "permits": "Permisos",
+    "vehicles": "Vehículos",
+    "tickets": "Multas"
+  },
+  "terms": {
+    "title": "Términos del Servicio",
+    "agreementHeader": "1. Acuerdo",
+    "agreement": "Al usar este sitio web, aceptas estar sujeto a estos términos.",
+    "servicesHeader": "2. Servicios",
+    "services": "Sammy Parks permite a los conductores registrar vehiculos y pagar por permisos y multas.",
+    "feesHeader": "3. Tarifas y Pagos",
+    "fees": "Todas las decisiones tomadas por la administración y la aplicación de estacionamiento con respecto a tarifas y pagos son finales. No ofrecemos reembolsos por permisos de estacionamiento.",
+    "accountsHeader": "4. Cuentas de Usuario",
+    "accounts": "Para acceder a muchos de nuestros servicios, es posible que debas crear una cuenta.",
+    "conductHeader": "5. Conducta",
+    "conductagreenot": "Usted accepta no",
+    "conduct": [
+      "Usar ParkClear para fines fraudulentos o ilegales.",
+      "Intentar realizar ingeniería inversa o interferir con el funcionamiento del servicio.",
+      "Hacerse pasar por otra persona o entidad."
+    ],
+    "liabilityHeader": "8. Limitación de Responsabilidad",
+    "liability": "En la máxima medida permitida por la ley, ParkClear Inc. no será responsable de daños indirectos, incidentales o consecuentes, incluidos plazos de pago perdidos, multas adicionales o acciones legales, incluso si se advirtió la posibilidad.",
+    "agreeButton": "De acuerdo",
+    "closeButton": "Cerrar"
+  }
+}

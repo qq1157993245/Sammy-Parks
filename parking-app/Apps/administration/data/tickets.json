@@ -1,0 +1,20 @@
+[
+  {
+    "id": "100",
+    "driverId": "1",
+    "violated": "Expired Permit",
+    "overridden": true
+  },
+  {
+    "id": "101",
+    "driverId": "2",
+    "violated": "No Permit",
+    "overridden": false
+  },
+  {
+    "id": "102",
+    "driverId": "3",
+    "violation": "Wrong Zone",
+    "overridden": false
+  }
+]

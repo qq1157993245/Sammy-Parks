@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS ticket_type CASCADE;
+CREATE TABLE ticket_type (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  data JSONB
+);
+
+DROP TABLE IF EXISTS ticket CASCADE;
+CREATE TABLE IF NOT EXISTS ticket (
+  id UUID UNIQUE PRIMARY KEY DEFAULT gen_random_uuid(),
+  data JSONB NOT NULL
+);

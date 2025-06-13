@@ -1,0 +1,27 @@
+{
+  "name": "stripe-microservice",
+  "version": "1.2.0",
+  "description": "Using the Stripe API",
+  "author": "Julian Cayanan",
+  "license": "UNLICENSED",
+  "repository": "none",
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts",
+    "exec": "ts-node src/server.ts"
+  },
+  "scripts": {
+    "start": "node build/src/server.js",
+    "prebuild": "npm run swagger",
+    "build": "tsc",
+    "predev": "npm run swagger",
+    "dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
+    "swagger": "tsoa spec-and-routes",
+    "pretest": "npm run swagger",
+    "test": "vitest run --no-file-parallelism --testTimeout=3000 --coverage",
+    "lint": "eslint test/**/*.[jt]s src/**/*.[jt]s --fix",
+    "install": "cd ../ && npm install"
+  }
+}

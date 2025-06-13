@@ -1,0 +1,18 @@
+[
+    {
+        "id": "10000",
+        "driverId": "1000",
+        "permitTypeId": "100",
+        "vehicleId": "1",
+        "startTime": "2025-05-08T07:03:00.461Z",
+        "endTime": "2025-11-08T08:03:00.461Z"
+    },
+    {
+        "id": "10001",
+        "driverId": "1001",
+        "permitTypeId": "100",
+        "vehicleId": "2",
+        "startTime": "2023-05-08T07:03:00.461Z",
+        "endTime": "2023-11-08T08:03:00.461Z"
+    }
+]

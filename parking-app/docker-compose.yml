@@ -1,0 +1,29 @@
+services:
+  app:
+    container_name: app
+    env_file: .env
+    environment:
+      NODE_ENV: production
+    build: .
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
+      - "3050:3050"
+      - "3100:3100"
+      - "3150:3150"
+      - "5860:5860"
+      - "5861:5861"
+
+  postgres:
+    container_name: database
+    image: postgres:alpine
+    environment:
+      POSTGRES_PORT: ${POSTGRES_PORT}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - ./Sql/databases.sql:/docker-entrypoint-initdb.d/1.databases.sql
+      - ./Sql/schema.sql:/docker-entrypoint-initdb.d/2.schema.sql
+      - ./Sql/data.sql:/docker-entrypoint-initdb.d/3.data.sql
