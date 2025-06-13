@@ -26,9 +26,9 @@ This application emphasizes:
 ## 🎥 Demos
 
 <!-- Demo Screenshots -->
-- Driver: ./screenshots/driver.pdf
-- Administrator: ./screenshots/administrator.pdf
-- Parking Enforcement: ./screenshots/enforcement.pdf
+- [Driver View](./screenshots/driver.pdf)
+- [Administrator View](./screenshots/administrator.pdf)
+- [Parking Enforcement View](./screenshots/enforcement.pdf)
 ---
 
 
