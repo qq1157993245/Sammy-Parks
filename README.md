@@ -28,8 +28,8 @@ This application emphasizes:
 <!-- Embed or link demo videos or screenshots here -->
 - Demo 1: [Link to video or GIF]
 - Demo 2: [Link to video or GIF]
-
 ---
 
-*Developed as part of UCSC CSE187 - Spring 2025*
+
+
 
