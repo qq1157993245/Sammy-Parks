@@ -14,7 +14,6 @@ export interface ExtendedSession extends Session {
   }
 }
 
-
 //I used chatgpt to add this stuff between these two comments
 // 
 declare module "next-auth" {
@@ -52,6 +51,26 @@ const authOptions = {
       }
     }),
   ],
+
+  cookies: {
+    sessionToken: {
+      name: "session",
+      options: {
+        httpOnly: true,
+        secure: true,
+        expires: new Date(Date.now() + 30 * 60 * 1000),
+        sameSite: 'lax' as const,
+        path: '/',
+      }
+    }
+  },
+
+  session: {
+    strategy: "jwt" as const,
+    maxAge: 1800,      
+    updateAge: 0,       
+  },
+
   debug: true,
   /* pages: {
   signIn: '/driver/login'  }, */
