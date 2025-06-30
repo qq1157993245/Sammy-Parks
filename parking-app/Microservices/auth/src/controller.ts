@@ -9,7 +9,8 @@ import {
   Security,
   Route,
   Query,
-  SuccessResponse
+  SuccessResponse,
+  UploadedFile
 } from 'tsoa'
 
 import * as express from 'express'
@@ -255,6 +256,31 @@ export class AuthController extends Controller {
       return result
     }
     return result
+  }
+
+  @Post('upload-image')
+  @Security('jwt')
+  @SuccessResponse('200','Successfully upload image')
+  @Response('500', 'Internal Server Error')
+  public async uploadImage(
+    @UploadedFile("image") file: Express.Multer.File,
+    @Request() request:express.Request
+  ) : Promise<string>{
+    const userId = request.user?.id as string
+    const url = await new ApiService().uploadImage(userId, file)
+    return url
+  }
+
+  @Get('get-image')
+  @Security('jwt')
+  @SuccessResponse('200','Successfully get image')
+  @Response('500', 'Internal Server Error')
+  public async getImage(
+    @Request() request:express.Request
+  ) : Promise<string>{
+    const userId = request.user?.id as string
+    const url = await new ApiService().getImage(userId)
+    return url
   }
 }
 

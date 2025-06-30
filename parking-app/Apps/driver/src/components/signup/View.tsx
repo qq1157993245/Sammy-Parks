@@ -46,7 +46,7 @@ export function SignupView() {
 
   const handleToLandingPage = () => {
     //window.location.href = 'http://localhost:3000';
-    window.location.href = 'https://sammyparks.com';
+    window.location.href = 'https://sammyparks.it.com';
   }
 
   function handleClose (event: React.SyntheticEvent | Event, reason?: string) {

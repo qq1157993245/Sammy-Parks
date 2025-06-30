@@ -65,7 +65,8 @@
     "denied": "Disputa Denegada"
   },
   "profile": {
-    "header": "Perfil"
+    "header": "Perfil",
+    "edit": "Editar perfil"
   },
   "nav": {
     "home": "Casa",

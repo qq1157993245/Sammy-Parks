@@ -94,6 +94,7 @@ export class AuthService {
                   }
                 }
                 resolve({id: user.id, roles: user.roles})
+                return
               }
               reject(new Error("Unauthorized"))
             }

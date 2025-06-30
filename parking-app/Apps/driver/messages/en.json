@@ -65,7 +65,8 @@
     "denied": "Challenge Denied"
   },
   "profile": {
-    "header": "Profile"
+    "header": "Profile",
+    "edit": "Edit Profile"
   },
   "nav": {
     "home": "Home",

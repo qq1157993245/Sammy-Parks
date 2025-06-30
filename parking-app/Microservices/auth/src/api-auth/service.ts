@@ -2,6 +2,7 @@ import * as jwt from "jsonwebtoken"
 
 import { pool } from '../db';
 import { ApiKey, Member } from '.'
+import { uploadFile } from "../s3Service";
 
 export class ApiService {
   public async verifyPoliceApiKey(
@@ -95,5 +96,23 @@ export class ApiService {
       name: rows[0].data.name,
       accessToken: accessToken
     }
+  }
+
+  public async uploadImage(userId: string, file: Express.Multer.File) : Promise<string>{
+    const url = await uploadFile(file);
+    await pool.query(
+      `UPDATE driver
+      SET data = jsonb_set(data, '{image}', to_jsonb($1::text))
+      WHERE id = $2`, [url, userId]
+    );
+    return url;
+  }
+
+  public async getImage(userId: string) : Promise<string>{
+    const driverResult = await pool.query(
+      `SELECT data ->> 'image' AS image FROM driver WHERE id = $1`,
+      [userId]
+    );
+    return driverResult.rows[0].image;
   }
 }
