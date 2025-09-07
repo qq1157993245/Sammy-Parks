@@ -21,7 +21,7 @@ This application emphasizes:
 
 ## 🌐 Live Demo
 
-👉 [https://sammyparks.it.com](https://sammyparks.com)
+👉 [https://sammyparks.it.com](https://sammyparks.it.com)
 
 ## 🎥 Demos
 
